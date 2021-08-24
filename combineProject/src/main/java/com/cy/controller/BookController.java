@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/book")
 public class BookController {
 
+//    不推荐使用
+//    @Autowired
+//    @Qualifier("bookServiceImpl")
     private BookService bookService;
 
     @Autowired
@@ -29,6 +32,7 @@ public class BookController {
         List<Books> list = bookService.queryAllBook();
         model.addAttribute("list", list);
         return "allBook";
+//        return "test";
     }
 
     // 添加书籍
